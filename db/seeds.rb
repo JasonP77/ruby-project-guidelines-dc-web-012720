@@ -13,3 +13,4 @@ game3 = Game.create(name: "League of Legends", price: 0.00, rating: 4.0, categor
 # profile = Profile.create(cust1)
 # binding.pry
 # 0
+1
