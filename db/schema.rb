@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 3) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "game_id"
-    t.integer "time"
-    t.text    "review"
+    t.integer  "customer_id"
+    t.integer  "game_id"
+    t.datetime "time"
+    t.text     "review"
   end
 
 end
