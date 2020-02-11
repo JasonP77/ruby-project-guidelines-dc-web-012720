@@ -19,4 +19,11 @@ uninstall (when showing list of your games or one you search)
 update credit on user's account
  - 
 
+for profile try to find a way that we can have more than 1 game_id so when we go to their profiles we can see which games they have so when we do search game, we will know if we will have the option to install or uninstall
  
+create instance methods in customer to remove or add game
+
+find a way to make it so we can have a method forgot_username
+				email address 
+
+			forgot_password

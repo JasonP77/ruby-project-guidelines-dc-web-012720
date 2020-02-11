@@ -23,14 +23,44 @@ def password(customer_obj)
     password = gets.chomp
     until password == customer_obj.password
       if password == customer_obj.password
-        puts "Good"
-        find_game_by_category(customer_obj)
+        # puts "Welcome"  
+        # for some reason these 2 lines get skipped???
+        # find_game_by_category(customer_obj)
       else 
         puts "Password does not match"
         puts 'Insert your password.'
         password = gets.chomp
       end
     end
+end 
+
+def start_menu
+  puts "Select from menu."
+  puts "1. Search Game"
+  puts "2. My Profile"
+  puts "3. Game"
+  return gets.chomp.to_i
+end 
+
+
+def list_of_all_games(user)
+  print = print_game(user, Game.all)
+  gets.chomp
+  menu_selection(user)
+end 
+
+
+def menu_selection(user)
+  selection = start_menu
+  if selection == 1
+    list_of_all_games(user)
+  elsif selection == 2
+    #my profile/library
+  elsif selection == 3
+    exit
+  else 
+    menu_selection(user) 
+  end
 end 
 
 def find_game_by_category(user)
@@ -49,13 +79,19 @@ def print_game(user, games)
 games.each_with_index{|game, index|
   puts "#{index+1}. #{game.name}"
   }
+  # selection = gets.chomp
+  # if selection == 1
+  # end
 end
+
+def exit
+
+end 
 
 def run 
   user = username
-  # binding.pry
-  # password(user)
-  find_game_by_category(user)
+  menu_selection(user)
+  # find_game_by_category(user)
 end
 
 run

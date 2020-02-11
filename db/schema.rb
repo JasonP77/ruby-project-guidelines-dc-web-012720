@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "name"
     t.string "username"
     t.string "password"
+    t.string "email"
   end
 
   create_table "games", force: :cascade do |t|
