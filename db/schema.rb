@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.integer  "customer_id"
     t.integer  "game_id"
     t.datetime "time"
+    t.float    "money"
     t.text     "review"
   end
 

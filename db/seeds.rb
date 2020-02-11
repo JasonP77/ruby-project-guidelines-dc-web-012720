@@ -19,13 +19,12 @@ game4 = Game.create(name: "Angry Birds", price: 0.00, rating: 1.0, category: "St
 
 
 
-pro1 = Profile.create(customer_id: cust1.id, game_id: game2.id, time: 2, review: "This game is great.")
-pro2 = Profile.create(customer_id: cust3.id, game_id: game1.id, time: 10, review: "This game is amazing.")
-pro3 = Profile.create(customer_id: cust2.id, game_id: game3.id, time: 7, review: "This game is okay.")
-pro4 = Profile.create(customer_id: cust1.id, game_id: game4.id, time: 200, review: "Uninstall.")
-pro5 = Profile.create(customer_id: cust3.id, game_id: game2.id, time: 59, review: "I love this game.")
+pro1 = Profile.create(customer_id: cust1.id, game_id: game2.id, time: 2, money: 0, review: "This game is great.")
+pro2 = Profile.create(customer_id: cust3.id, game_id: game1.id, time: 10, money: 0, review: "This game is amazing.")
+pro3 = Profile.create(customer_id: cust2.id, game_id: game3.id, time: 7, money: 0, review: "This game is okay.")
+pro4 = Profile.create(customer_id: cust1.id, game_id: game4.id, time: 200, money: 0, review: "Uninstall.")
+pro5 = Profile.create(customer_id: cust3.id, game_id: game2.id, time: 59, money: 0, review: "I love this game.")
 
-rest.Client()
 
 # binding.pry
 # 0
