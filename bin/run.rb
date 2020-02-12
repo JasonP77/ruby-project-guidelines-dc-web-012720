@@ -43,17 +43,11 @@ def start_menu
 end 
 
 
-def list_of_all_games(user)
-  print = print_game(user, Game.all)
-  gets.chomp
-  menu_selection(user)
-end 
-
-
 def menu_selection(user)
   selection = start_menu
   if selection == 1
-    list_of_all_games(user)
+    option1_menu1
+    # list_of_all_games(user)
   elsif selection == 2
     #my profile/library
   elsif selection == 3
@@ -62,6 +56,58 @@ def menu_selection(user)
     menu_selection(user) 
   end
 end 
+
+def option1_menu1
+  puts "Please choose one."
+  puts "1. GameList"
+  puts "2. Above AVG"
+  puts "3. Below AVG"
+end
+
+def option1_menu1_selection(user)
+  selection = gets.chomp.to_i
+  if selection == 1
+    option1_menu2
+  elsif selection == 2
+    puts "games (above AVG)"
+  elsif selection == 3
+    puts "games (below AVG)"
+  else 
+    menu_selection(user) 
+  end
+end
+
+def option1_menu2 
+  puts "Please choose one."
+  puts "1. Purchase"
+  puts "2. Menu"
+end
+
+def option1_menu2_selection(user)
+  selection = gets.chomp.to_i
+  if selection == 1
+    puts "Okie"
+  elsif selection == 2
+    menu_selection(user) 
+  else 
+    menu_selection(user)  
+  end
+end
+
+
+# def list_of_all_games(user)
+#   print = print_game(user, Game.all)
+#   gets.chomp
+#   selection = option1_menu2
+#   if selection == 1
+#     puts "purchase testing"
+#   elsif selection == 2
+#     menu_selection(user)
+#   else 
+#     menu_selection(user) 
+#   end
+# end 
+
 
 def find_game_by_category(user)
   puts "Type in game category you are interested in:"
@@ -91,6 +137,8 @@ end
 def run 
   user = username
   menu_selection(user)
+  option1_menu1_selection(user)
+  option1_menu2_selection(user)
   # find_game_by_category(user)
 end
 
