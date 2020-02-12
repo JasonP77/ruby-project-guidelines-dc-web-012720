@@ -42,11 +42,31 @@ def start_menu
   return gets.chomp.to_i
 end 
 
+def option1_menu1
+  puts "Your options."
+  puts "1. View all games"
+  puts "2. Above AVG"
+  puts "3. Below AVG"
+  return gets.chomp.to_i
+end
 
 def list_of_all_games(user)
   print = print_game(user, Game.all)
   gets.chomp
-  menu_selection(user)
+
+  selection = option1_menu
+  if selection == 1
+    puts "testing purchase"
+  elsif selection == 2
+    #my profile/library
+    puts "list of games (above AVG)"
+  elsif selection == 3
+    puts "list of games (below AVG)"
+  else 
+    menu_selection(user) 
+  end
+
+
 end 
 
 
