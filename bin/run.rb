@@ -40,11 +40,11 @@ def menu_selection
 
     selection = start_menu
     if selection == 1
-      list_of_all_games(user)
+      list_of_all_games(@@user)
     elsif selection == 2
       #my profile/library
-        puts  @@user.find_owner_games
-    #   puts @@user.customer_games
+        # puts  @@user.find_owner_games
+      puts @@user.customer_games
     elsif selection == 3
       exit
     else 

@@ -64,3 +64,21 @@ def add_game(game_name)
 
 
 git checkout /b yo
+
+
+1. Game
+	1. List_of_all_games	
+		a. install
+		b. review
+		c. rating
+	2. Game.sorted.by.rating
+	3. game.sorted.by.categories
+
+2. My games
+	1. owners_games
+		a. uninstall
+
+3. Stats
+	1. money_spent
+	2. time_spent
+4. 

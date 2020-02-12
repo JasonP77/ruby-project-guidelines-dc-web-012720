@@ -17,14 +17,15 @@ game3 = Game.find_or_create_by(name: "League of Legends", price: 0.00, rating: 4
 game4 = Game.find_or_create_by(name: "Angry Birds", price: 0.00, rating: 1.0, category: "Strategy", company: "Apple")
 
 
+#when testing in pry can just do something like pro1 = _ to get whatever i typed in before in pry
 
-
-pro1 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game2.id, time: 2, money: 3.00, review: "This game is great.") 
-pro2 = Profile.find_or_create_by(customer_id: cust3.id, game_id: game1.id, time: 10, money: 5.00, review: "This game is amazing.")
-pro3 = Profile.find_or_create_by(customer_id: cust2.id, game_id: game3.id, time: 7, money: 3.00, review: "This game is okay.")
+pro1 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game2.id, time: 20, money: 3.00, review: "This game is great.") 
+pro2 = Profile.find_or_create_by(customer_id: cust3.id, game_id: game1.id, time: 10, money: 5.07, review: "This game is amazing.")
+pro3 = Profile.find_or_create_by(customer_id: cust2.id, game_id: game3.id, time: 79, money: 3.70, review: "This game is okay.")
 pro4 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game4.id, time: 200, money: 4.00, review: "Uninstall.") 
 pro5 = Profile.find_or_create_by(customer_id: cust3.id, game_id: game2.id, time: 59, money: 0.00, review: "I love this game.")
-
+pro6 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game4.id, time: 500, money: 20.00, review: "") 
+pro7 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game1.id, time: 66, money: 17.30, review: "") 
 #Profile.games to just find all the games that a customer has
 
 #changed money value
