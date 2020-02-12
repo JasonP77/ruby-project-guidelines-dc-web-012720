@@ -27,3 +27,39 @@ find a way to make it so we can have a method forgot_username
 				email address 
 
 			forgot_password
+
+
+if we did apis
+
+https://api.rawg.io/api/games
+
+def get_api_for_games
+    response_string = RestClient.get('https://api.rawg.io/api/games')
+    response_hash = JSON.parse(response_string)
+    return response_hash 
+end 
+
+
+
+
+def logout_user(user = nil) 
+
+    return user = nil 
+end 
+
+
+maybe for deleting a game through profile?? (in customer)
+
+def uninstall_game(game_id) //or by Game.find_by
+        game = Profile.find_by((customer_id: cust3.id, game_id: game1.id, time: 10, money: 5.00, review: "This game is amazing.")
+        game.destroy 
+    end 
+
+def 
+
+def add_game(game_name)
+        Game = Game.where(name: game_name)
+        Profile.create(customer_id: self.id, game_id: game[0].id)
+    end
+
+
