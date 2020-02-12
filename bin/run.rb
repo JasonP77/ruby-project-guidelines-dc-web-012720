@@ -91,7 +91,7 @@ def find_game_by_category(user)
   end
   print_game(user, game)
 end
-
+binding.pry
 # 1.view profile (1. see all games 2. total money spent 3. total time spent)
 # 2.purchase new game! (1. 2. 3.)
 # 3.exit
