@@ -12,10 +12,32 @@ class Customer < ActiveRecord::Base
     #     Profile.create(customer_id: self.id, game_id: game[0].id)
     # end
 
+
+	
 	def uninstall_game(game_id)
         game = Profile.find_by(customer_id: cust3.id, game_id: game1.id, time: 10, money: 5.00, review: "This game is amazing.")
         game.destroy 
     end 
 
+	def owner_games
+		Profile.all.select do  |profile|
+			 profile.customer_id == self.id
+		end 
+	end
+
+	def find_owner_games
+		self.owner_games.map {|profile| profile.game.name}
+	end 
+
+
+	#or? Customer.profiles.each do |profile| 
+		#profile.game
+		#end 	
+		
+	
+	def customer_games
+        profile = Profile.where(customer_id: self.id) 
+        profile.map{|game| Game.find_by(id: game.game_id).name}
+	end
 	
 end

@@ -1,11 +1,14 @@
 require_relative '../config/environment'
 require 'pry'
 
+@@user = nil
+
 def username
     flag = false
     x = ""
     while flag == false             
-      puts 'Insert your username:'
+      puts 'Insert your username:'                          #if doesnt have right username it will keep repeating, if it finds a match it goes to 
+                                                            # line 17 for pw
       user_name = gets.chomp
       x = Customer.find_by(username: user_name)
       if x.class == Customer
@@ -14,25 +17,40 @@ def username
         password(x)
       elsif x == nil
       puts "Invalid username"
-    end
+    end         
   end
 end
+
+
 
 def password(customer_obj)
     puts 'Insert your password.'
     password = gets.chomp
     until password == customer_obj.password
-      if password == customer_obj.password
-        # puts "Welcome"  
-        # for some reason these 2 lines get skipped???
-        # find_game_by_category(customer_obj)
-      else 
         puts "Password does not match"
         puts 'Insert your password.'
         password = gets.chomp
       end
-    end
+    
+      @@user = customer_obj
+      menu_selection
 end 
+
+def menu_selection
+
+    selection = start_menu
+    if selection == 1
+      list_of_all_games(user)
+    elsif selection == 2
+      #my profile/library
+        puts  @@user.find_owner_games
+    #   puts @@user.customer_games
+    elsif selection == 3
+      exit
+    else 
+      menu_selection(user) 
+    end
+  end 
 
 def start_menu
   puts "Select from menu."
@@ -49,6 +67,11 @@ def option1_menu1
   puts "3. Below AVG"
   return gets.chomp.to_i
 end
+
+
+
+
+
 
 def list_of_all_games(user)
   print = print_game(user, Game.all)
@@ -70,18 +93,7 @@ def list_of_all_games(user)
 end 
 
 
-def menu_selection(user)
-  selection = start_menu
-  if selection == 1
-    list_of_all_games(user)
-  elsif selection == 2
-    #my profile/library
-  elsif selection == 3
-    exit
-  else 
-    menu_selection(user) 
-  end
-end 
+
 
 def find_game_by_category(user)
   puts "Type in game category you are interested in:"
@@ -91,6 +103,7 @@ def find_game_by_category(user)
   end
   print_game(user, game)
 end
+
 
 # 1.view profile (1. see all games 2. total money spent 3. total time spent)
 # 2.purchase new game! (1. 2. 3.)
@@ -109,9 +122,9 @@ def exit
 end 
 
 def run 
-  user = username
-  menu_selection(user)
-  # find_game_by_category(user)
+  username
+#   menu_selection
+#   find_game_by_category($user)
 end
 
 run
