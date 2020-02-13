@@ -68,18 +68,37 @@ git checkout /b yo
 
 1. Game
 	1. List_of_all_games	
-		a. install		// jason
-		b. review		// jason
+		a. install		// jason       make it work
+		b. review		// jason		
 		c. rating		// sonata
 	2. Game.sorted.by.rating	//sonata
 	3. game.sorted.by.categories //	sonata
 
 2. My games				//yo
 	1. owners_games
-		a. uninstall
+		a. uninstall      //cant uninstall b/c it just deletes 1 profile 
 		b. money_spent
 		c. time_spent
 
 3. Stats
 	
 4
+
+
+
+
+//brainstorm ideas
+
+1. we add a rating attribute to profile, but this makes it so we cant hard code rating in game instance.
+	- this will make it so we would have to make a method that takes the sum of all ratings / avg number of ratings
+
+	game call of duty: jason(3/5) sonata(2/5) yo (5/5)  (3+2+5)/3 = 3.33 
+
+  a. a person can give a rating 
+  b. 
+
+2. sign up + new account + forgot username/password
+
+3. random
+
+4. customer will have a credit instance 

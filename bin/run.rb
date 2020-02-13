@@ -47,6 +47,9 @@ def menu_selection
         list_of_my_games(@@user)
     #   puts @@user.customer_games
     elsif selection == 3
+        #change password 
+        
+    elsif selection == 4
       exit
     else 
       menu_selection(user) 
