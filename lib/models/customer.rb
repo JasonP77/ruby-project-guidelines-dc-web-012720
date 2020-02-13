@@ -48,9 +48,14 @@ class Customer < ActiveRecord::Base
 	end 
 	# self.owner_games.sum {|profile| profile.money}
 
-	def find_owner_time_spent
-		self.profiles.sum {|profile| profile.time}
-		# self.owner_games.sum {|profile| profile.time}
+	def find_owner_time_spent(game_id)
+
+		game = self.profiles.select {|profile| profile.game_id == game_id}
+		game.sum{|profile| profile.time}
+		
+		# #self.profiles.sum {|profile| profile.time}
+		
+		## self.owner_games.sum {|profile| profile.time}
 	end 
 
 	

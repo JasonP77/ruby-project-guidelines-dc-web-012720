@@ -81,18 +81,21 @@ def option2_menu
   end
 @@selected_game = nil
 def list_of_my_games(user)
-    print = print_game(user, @@user.games)
+    print = print_game(user, @@user.games.uniq)
     a = gets.chomp.to_i
     @@selected_game = @@user_game_list[a]
     selection = option2_menu
   if selection == 1
-    puts "game uninstalled."
+    puts "Game uninstalled."
     @@user.uninstall_game(@@selected_game.id) #grabs the selected game and then uninstalls 
   elsif selection == 2
-    #my profile/library
-    puts "list of games (above AVG)"
+    #money spent
+    money = @@user.find_owner_money_spent(@@selected_game.id)
+    puts "You have spent #{money} dollars."
   elsif selection == 3
-    puts "list of games (below AVG)"
+    time = @@user.find_owner_time_spent(@@selected_game.id)
+    puts "You have spent #{time} hours."
+    #time spent
   else 
     menu_selection(user) 
   end
