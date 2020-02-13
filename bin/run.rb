@@ -44,8 +44,8 @@ def menu_selection
     elsif selection == 2
       #my profile/library
         # puts  @@user.find_owner_games
-        # list_of_my_games(@@user)
-      puts @@user.customer_games
+        list_of_my_games(@@user)
+    #   puts @@user.customer_games
     elsif selection == 3
       exit
     else 
@@ -72,30 +72,31 @@ def option1_menu
 end
 
 ###
-# def option2_menu
-#     puts "Select from menu."
-#     puts "1. Uninstall"
-#     puts "2. Check amount of money you spent"
-#     puts "3. Check amount of time you spent"
-#     return gets.chomp.to_i
-#   end
-
-# def list_of_my_games(user)
-#     print = print_game(user, @@user.customer_games)
-#     gets.chomp
-
-#     selection = option2_menu
-#   if selection == 1
-#     puts "testing purchase"
-#   elsif selection == 2
-#     #my profile/library
-#     puts "list of games (above AVG)"
-#   elsif selection == 3
-#     puts "list of games (below AVG)"
-#   else 
-#     menu_selection(user) 
-#   end
-# end 
+def option2_menu
+    puts "Select from menu."
+    puts "1. Uninstall"
+    puts "2. Check amount of money you spent"
+    puts "3. Check amount of time you spent"
+    return gets.chomp.to_i
+  end
+@@selected_game = nil
+def list_of_my_games(user)
+    print = print_game(user, @@user.games)
+    a = gets.chomp.to_i
+    @@selected_game = @@user_game_list[a]
+    selection = option2_menu
+  if selection == 1
+    puts "game uninstalled."
+    @@user.uninstall_game(@@selected_game.id) #grabs the selected game and then uninstalls 
+  elsif selection == 2
+    #my profile/library
+    puts "list of games (above AVG)"
+  elsif selection == 3
+    puts "list of games (below AVG)"
+  else 
+    menu_selection(user) 
+  end
+end 
 
 
 ###
@@ -135,14 +136,17 @@ end
 # 1.view profile (1. see all games 2. total money spent 3. total time spent)
 # 2.purchase new game! (1. 2. 3.)
 # 3.exit
+@@user_game_list = {}
 def print_game(user, games)
-games.each_with_index{|game, index|
+games.each_with_index{|game, index|     #puts the game of the user in a hash and prints it like 1. game_name
+  @@user_game_list[index+1] = game
   puts "#{index+1}. #{game.name}"
   }
+ 
   # selection = gets.chomp
   # if selection == 1
   # end
-end
+end    #need to make a global variable to have a hash like {1:game, 2:game2} this is for @@selected_game.id
 
 def exit
 

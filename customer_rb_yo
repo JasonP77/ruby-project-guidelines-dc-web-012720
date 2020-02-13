@@ -23,7 +23,7 @@ class Customer < ActiveRecord::Base
 
 
 	#################################### this should be used for finding the games that belongs to owner
-	# def owner_games									#dont need due to activerecord
+	# def owner_games									dont need due to activerecord
 	# 	Profile.all.select do  |profile|
 	# 		 profile.customer_id == self.id
 	# 	end 
@@ -36,21 +36,16 @@ class Customer < ActiveRecord::Base
 	#####################################
 
 	def find_owner_reviews
-		#  self.owner_games.map {|profile| profile.review}   #same change made for 2 below
-		
-		self.profiles.map {|profile| profile.review}
+		# self.owner_games.map {|profile| profile.review}   same change made for 2 below
+		self.games.map {|profile| profile.review}
 	end 
 
-	def find_owner_money_spent(game_id)
-		game = self.profiles.select {|profile| profile.game_id == game_id}
-		game.sum{|profile| profile.money}
-		
+	def find_owner_money_spent
+		self.games.sum {|profile| profile.money}
 	end 
-	# self.owner_games.sum {|profile| profile.money}
 
 	def find_owner_time_spent
-		self.profiles.sum {|profile| profile.time}
-		# self.owner_games.sum {|profile| profile.time}
+		self.games.sum {|profile| profile.time}
 	end 
 
 	
@@ -63,7 +58,5 @@ class Customer < ActiveRecord::Base
 
         # profile.map{|game| Game.find_by(id: game.game_id).name}
 	end
-	
-
 	
 end
