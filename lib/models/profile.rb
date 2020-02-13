@@ -17,16 +17,4 @@ class Profile < ActiveRecord::Base
         return frequency.sort_by {|title, num| num}.reverse 
 	end 
 	
-	def all_games_for_player
-
-	end 
-
-	def total_spent
-		
-	end
-	
-	
-	
-
-
 end
