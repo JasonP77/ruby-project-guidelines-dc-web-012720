@@ -54,7 +54,7 @@ class Customer < ActiveRecord::Base
 		# profile = Profile.where(customer_id: self.id) 
 		# profile.map{|profile| profile.game.name}.uniq
 
-	      self.games.map{|profile| profile.game.name}.uniq
+	      self.games.map{|game| game.name}.uniq
 
         # profile.map{|game| Game.find_by(id: game.game_id).name}
 	end

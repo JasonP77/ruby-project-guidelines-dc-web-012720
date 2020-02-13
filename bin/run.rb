@@ -44,6 +44,7 @@ def menu_selection
     elsif selection == 2
       #my profile/library
         # puts  @@user.find_owner_games
+        # list_of_my_games(@@user)
       puts @@user.customer_games
     elsif selection == 3
       exit
@@ -51,6 +52,8 @@ def menu_selection
       menu_selection(user) 
     end
   end 
+
+
 
 def start_menu
   puts "Select from menu."
@@ -60,7 +63,7 @@ def start_menu
   return gets.chomp.to_i
 end 
 
-def option1_menu1
+def option1_menu
   puts "Your options."
   puts "1. View all games"
   puts "2. Above AVG"
@@ -68,10 +71,34 @@ def option1_menu1
   return gets.chomp.to_i
 end
 
+###
+# def option2_menu
+#     puts "Select from menu."
+#     puts "1. Uninstall"
+#     puts "2. Check amount of money you spent"
+#     puts "3. Check amount of time you spent"
+#     return gets.chomp.to_i
+#   end
+
+# def list_of_my_games(user)
+#     print = print_game(user, @@user.customer_games)
+#     gets.chomp
+
+#     selection = option2_menu
+#   if selection == 1
+#     puts "testing purchase"
+#   elsif selection == 2
+#     #my profile/library
+#     puts "list of games (above AVG)"
+#   elsif selection == 3
+#     puts "list of games (below AVG)"
+#   else 
+#     menu_selection(user) 
+#   end
+# end 
 
 
-
-
+###
 
 def list_of_all_games(user)
   print = print_game(user, Game.all)
