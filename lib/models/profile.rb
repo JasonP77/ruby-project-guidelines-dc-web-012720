@@ -16,5 +16,8 @@ class Profile < ActiveRecord::Base
         end 
         return frequency.sort_by {|title, num| num}.reverse 
 	end 
-	
+	def self.all_review(user)
+        profile = Profile.all.select {|profile| profile.customer_id == user}
+        profile.map {|profile| profile.review}
+    end
 end
