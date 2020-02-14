@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 3) do
+ActiveRecord::Schema.define(version: 2) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -19,20 +19,13 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "email"
   end
 
-  create_table "games", force: :cascade do |t|
-    t.string "name"
-    t.float  "price"
-    t.float  "rating"
-    t.string "category"
-    t.string "company"
-  end
-
   create_table "profiles", force: :cascade do |t|
     t.integer  "customer_id"
     t.integer  "game_id"
     t.datetime "time"
     t.float    "money"
     t.text     "review"
+    t.float    "rating"
   end
 
 end

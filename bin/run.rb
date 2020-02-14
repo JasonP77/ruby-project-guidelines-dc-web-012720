@@ -1,7 +1,7 @@
 require_relative '../config/environment'
 require 'pry'
 
-@@user = nil
+@@user = nil 
 
 def username
     flag = false

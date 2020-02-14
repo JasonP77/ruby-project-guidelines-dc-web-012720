@@ -24,13 +24,29 @@ game5 = Game.find_or_create_by(name: "Dota", price: 0.00, rating: 3.5, category:
 
 pro1 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game2.id, time: 20, money: 3.00, review: "This game is great.") 
 pro2 = Profile.find_or_create_by(customer_id: cust3.id, game_id: game1.id, time: 10, money: 5.07, review: "This game is amazing.")
-pro3 = Profile.find_or_create_by(customer_id: cust3.id, game_id: game3.id, time: 79, money: 3.70, review: "Uninstall.")
+pro3 = Profile.find_or_create_by(customer_id: cust3.id, game_id: game3.id, time: 79, money: 305.70, review: "Uninstall.")
 pro4 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game4.id, time: 200, money: 4.00, review: "This game is okay.") 
 pro5 = Profile.find_or_create_by(customer_id: cust3.id, game_id: game2.id, time: 59, money: 0.00, review: "I love this game.")
 pro6 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game4.id, time: 500, money: 20.00, review: "") 
 pro7 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game1.id, time: 66, money: 17.30, review: "") 
 pro8 = Profile.find_or_create_by(customer_id: cust2.id, game_id: game5.id, time: 59, money: 0.00, review: "Okay.")
 pro9 = Profile.find_or_create_by(customer_id: cust2.id, game_id: game4.id, time: 11, money: 0.30, review: "My go to game!")
+pro10 = Profile.find_or_create_by(customer_id: cust2.id, game_id: game1.id, time: 110, money: 50.30, review: "Wow.")
+pro11 = Profile.find_or_create_by(customer_id: cust3.id, game_id: game2.id, time: 9, money: 22.12, review: "")
+
+
+
+
+
+# pro1 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game2.id, time: 20, money: 3.00, review: "This game is great.", rating: 3.0) 
+# pro2 = Profile.find_or_create_by(customer_id: cust3.id, game_id: game1.id, time: 10, money: 5.07, review: "This game is amazing.", rating: 5.0)
+# pro3 = Profile.find_or_create_by(customer_id: cust3.id, game_id: game3.id, time: 79, money: 3.70, review: "Uninstall.", rating: 1.0)
+# pro4 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game4.id, time: 200, money: 4.00, review: "This game is okay.", rating: 4.0) 
+# pro5 = Profile.find_or_create_by(customer_id: cust3.id, game_id: game2.id, time: 59, money: 0.00, review: "I love this game.", rating: 4.0)
+# pro6 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game4.id, time: 500, money: 20.00, review: "", rating: ) 
+# pro7 = Profile.find_or_create_by(customer_id: cust1.id, game_id: game1.id, time: 66, money: 17.30, review: "", rating: 2.0) 
+# pro8 = Profile.find_or_create_by(customer_id: cust2.id, game_id: game5.id, time: 59, money: 0.00, review: "Okay.", rating: 5.0)
+# pro9 = Profile.find_or_create_by(customer_id: cust2.id, game_id: game4.id, time: 11, money: 0.30, review: "My go to game!", rating)
 
 
 #Profile.games to just find all the games that a customer has

@@ -17,7 +17,7 @@ class Customer < ActiveRecord::Base
 	def uninstall_game(game_id)
 		var = Profile.all.select {|profile| profile.game_id == game_id}
 		game = var.each {|profile| profile.destroy}
-		
+
 		# was oringally game = var.find{|profile| profile.customer_id == self.id }
 		# game.destroy
 
@@ -63,6 +63,11 @@ class Customer < ActiveRecord::Base
 		## self.owner_games.sum {|profile| profile.time}
 	end 
 
+	# def find_rating_sum(game_id)
+
+	# 	game = self.profiles.select {|profile| profile.game_id == game_id}
+	# 	game.sum{|profile| profile.rating}
+	# end 
 	
 	
 	def customer_games
